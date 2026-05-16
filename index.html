@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Movie List App - Cinema Edition</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/x-icon" href="https://png.pngtree.com/element_our/png/20181227/movie-icon-which-is-designed-for-all-application-purpose-new-png_287896.jpg">
+</head>
+<body>
+    <div class="container">
+
+        <div id="auth-section" class="auth-card">
+            <h1>Cinema Login</h1>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+                <input id="username-input" type="text" placeholder="Username" />
+                <input id="password-input" type="password" placeholder="Parolă" />
+            </div>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <button onclick="login()">Log In</button>
+                <button onclick="register()" style="background: #334155; color: white;">Creare Cont</button>
+            </div>
+
+            <div id="saved-accounts" class="accounts-list"></div>
+        </div>
+
+        <div id="movies-section" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <div>
+                    <h1 style="margin: 0;">Movie List</h1>
+                    <span id="current-user-display" style="color: var(--accent); font-weight: bold;"></span>
+                </div>
+                <button onclick="logout()" class="delete-btn" style="margin: 0; padding: 8px 15px;">Logout</button>
+            </div>
+
+            <form id="new-movie-form" style="background: var(--card-bg); padding: 20px; border-radius: 12px; margin-bottom: 30px; border: 1px solid #334155;">
+                <h3 style="margin-top: 0;">Adaugă un film nou</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <input id="title-input" type="text" placeholder="Titlu Film" required />
+                    <input id="genre-input" type="text" placeholder="Gen (Ex: Horror, Sci-Fi)" required />
+                    <input id="year-input" type="number" placeholder="Anul" required min="1900" max="2100" />
+                    <input id="rating-input" type="number" placeholder="Nota ta (1-10)" required min="1" max="10" step="0.1" />
+                </div>
+                <button type="submit" style="width: 100%; margin-top: 15px;">+ Adaugă în listă</button>
+            </form>
+
+            <div id="movies-list"></div>
+        </div>
+
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html>
